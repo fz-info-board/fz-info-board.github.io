@@ -251,7 +251,8 @@ h2 em {
     "date summary"
     "date schedule"
     "date meta"
-    "date actions";
+    "date actions"
+    "date sources";
   column-gap: 15px;
   min-width: 0;
   margin: 0;
@@ -274,7 +275,8 @@ h2 em {
     "summary"
     "schedule"
     "meta"
-    "actions";
+    "actions"
+    "sources";
   padding-left: 0;
   border-left: 0;
 }
@@ -499,12 +501,150 @@ h3 {
   flex: 0 0 14px;
 }
 
+.i6 {
+  grid-area: sources;
+  min-width: 0;
+  margin-top: 10px;
+}
+
+.i6 > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: #ffffff;
+  color: #344054;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 750;
+  list-style: none;
+}
+
+.i6 > summary::-webkit-details-marker {
+  display: none;
+}
+
+.i6 > summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  margin-left: 10px;
+  color: #667085;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.i6[open] > summary::after {
+  content: "-";
+}
+
+.i6-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.i6 > summary > strong {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.i7 {
+  margin-top: 7px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.i8 {
+  padding: 10px 0 0;
+}
+
+.i8.m-none {
+  --member-color: #aeb8c7;
+}
+
+.i8 + .i8 {
+  border-top: 1px solid var(--line);
+}
+
+.i8 h4 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 0 10px 7px;
+  color: #344054;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.i8 h4::before {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--member-color);
+  content: "";
+}
+
+.i8 h4 em {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 10px;
+  font-style: normal;
+}
+
+.i8 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.i8 li {
+  border-top: 1px solid #edf0f4;
+}
+
+.i8 a {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 7px 10px;
+  color: #344054;
+  text-decoration: none;
+}
+
+.i8 time {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.i8 a span {
+  min-width: 0;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
 @media (hover: hover) {
   .i4 .action-detail:hover {
     background: var(--link-pressed);
   }
 
   .i4 .action-x:hover {
+    background: #f5f6f8;
+  }
+
+  .i6 > summary:hover,
+  .i8 a:hover {
     background: #f5f6f8;
   }
 }
@@ -767,7 +907,7 @@ h3 {
 <header class="a0">
 <div class="a1">
 <h1>FZ Info Board</h1>
-<p class="a3">基準 8/18(火) / 更新 8/18(火) 04:53</p>
+<p class="a3">基準 8/18(火) / 更新 8/18(火) 07:36</p>
 </div>
 <div class="a4">
 <div class="a5"><span>今日</span><strong>4</strong></div>
@@ -803,18 +943,149 @@ h3 {
 <p class="i2">8月6日から8月18日まで、ラフォーレミュージアム原宿で開催中。メンバーが展示を楽しむ様子の動画は8月14日17時に公開予定</p>
 
 <p class="i3">イベント / 公式投稿</p>
-<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/82229" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088158684983750968" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/82229" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>12件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-tsukiashi-amane">
+<h4><span>月足天音</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085957287970246934" target="_blank" rel="noopener noreferrer" aria-label="月足天音のX投稿を見る">
+<time datetime="2026-08-08T14:12:27+09:00">8/8 14:12</time>
+<span>【月足天音】の頭をおさえて【月足天音】のサインを書く【月足天音】 ( )</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-nakagawa-runa">
+<h4><span>仲川瑠夏</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085561574173896717" target="_blank" rel="noopener noreferrer" aria-label="仲川瑠夏のX投稿を見る">
+<time datetime="2026-08-07T12:00:01+09:00">8/7 12:00</time>
+<span>【FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿】</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>5件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085197562840289591" target="_blank" rel="noopener noreferrer" aria-label="本日から『FRUITS ZIPPER 超☆観測展』のX投稿を見る">
+<time datetime="2026-08-06T11:53:34+09:00">8/6 11:53</time>
+<span>本日から『FRUITS ZIPPER 超☆観測展』</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085592203079151650" target="_blank" rel="noopener noreferrer" aria-label="FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿のX投稿を見る">
+<time datetime="2026-08-07T14:01:44+09:00">8/7 14:01</time>
+<span>FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2084540363562443043" target="_blank" rel="noopener noreferrer" aria-label="『FRUITS ZIPPER 超☆観測展』情報のX投稿を見る">
+<time datetime="2026-08-04T16:22:06+09:00">8/4 16:22</time>
+<span>『FRUITS ZIPPER 超☆観測展』情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2084228192223850571" target="_blank" rel="noopener noreferrer" aria-label="『FRUITS ZIPPER 超☆観測展』情報のX投稿を見る">
+<time datetime="2026-08-03T19:41:38+09:00">8/3 19:41</time>
+<span>『FRUITS ZIPPER 超☆観測展』情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2084849656279056583" target="_blank" rel="noopener noreferrer" aria-label="『FRUITS ZIPPER 超☆観測展』情報のX投稿を見る">
+<time datetime="2026-08-05T12:51:07+09:00">8/5 12:51</time>
+<span>『FRUITS ZIPPER 超☆観測展』情報</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>5件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088158684983750968" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-14T16:00:01+09:00">8/14 16:00</time>
+<span>「FRUITS ZIPPER 超☆観測展」に</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087785150369484941" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-13T15:15:43+09:00">8/13 15:15</time>
+<span>真剣に松本かれんブースをみるまつかれ</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086736045027278936" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-10T17:46:57+09:00">8/10 17:46</time>
+<span>チケットもらって嬉しそうなかれんたん</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089245846009266361" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-17T16:00:00+09:00">8/17 16:00</time>
+<span>【FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿】</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088839913689292981" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-16T13:06:58+09:00">8/16 13:06</time>
+<span>【FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿】</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 <article class="i0 u-today v-date m-none">
 <div class="i1">
 <span class="e2">開催日時</span>
 <strong>今日 17:30</strong>
 </div>
-<h3>ASOBI EXPO 2026チケット販売中</h3>
+<h3>ASOBIEXPO 2026</h3>
 <p class="i2">ASOBISYSTEM 19th Anniversary ASOBIEXPO 2026。8/18(火) TOYOTA ARENA TOKYO。開場14:00 無料エリア、16:00 メインアリーナ(有料)、開演17:30 メインアリーナ(有料)</p>
 
 <p class="i3">ライブ / 公式投稿</p>
-<div class="i4"><a class="action-detail" href="https://asobiexpo.com/" target="_blank" rel="noopener noreferrer">申込・購入</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088133539225342342" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://asobiexpo.com/" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089481140658962550" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-18T07:34:59+09:00">8/18 07:34</time>
+<span>\\ 本日は ASOBIEXPO 2026 出演 //</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088133539225342342" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-14T14:20:06+09:00">8/14 14:20</time>
+<span>\\ 8/18(火)開催 ASOBI EXPO 2026チケット販売中 //</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 <article class="i0 u-today v-date m-manaka-mana">
 <div class="i1">
@@ -826,6 +1097,7 @@ h3 {
 
 <p class="i3">テレビ / 真中まな / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://www.ctv.co.jp/omouma/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087350704767906055" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 <article class="i0 u-today v-date m-none">
 <div class="i1">
@@ -836,7 +1108,41 @@ h3 {
 <p class="i2">2026年8月18日、TOYOTA ARENA TOKYOの物販エリア（adidas SPORTS PARK）で、ふるっぱーグッズを14:00から販売</p>
 
 <p class="i3">グッズ / 公式投稿</p>
-<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/87583" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087808890133963111" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/87583" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>3件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089328891978518767" target="_blank" rel="noopener noreferrer" aria-label="\ 8/18(火)「ASOBIEXPO 2026」 特別抽選会実施決定 /のX投稿を見る">
+<time datetime="2026-08-17T21:30:00+09:00">8/17 21:30</time>
+<span>\ 8/18(火)「ASOBIEXPO 2026」 特別抽選会実施決定 /</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087808890133963111" target="_blank" rel="noopener noreferrer" aria-label="8/18(火) ASOBIEXPO 2026 ふるっぱーグッズ販売情報のX投稿を見る">
+<time datetime="2026-08-13T16:50:03+09:00">8/13 16:50</time>
+<span>8/18(火) ASOBIEXPO 2026 ふるっぱーグッズ販売情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085400278308893029" target="_blank" rel="noopener noreferrer" aria-label="【ASOBIEXPO 2026 コラボグッズ 再販のお知らせ】のX投稿を見る">
+<time datetime="2026-08-07T01:19:05+09:00">8/7 01:19</time>
+<span>【ASOBIEXPO 2026 コラボグッズ 再販のお知らせ】</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
@@ -851,6 +1157,7 @@ h3 {
 <p class="i5">第1部 11:00〜12:00（受付 10:30〜）／第2部 14:00〜15:00（受付 13:30〜）</p>
 <p class="i3">グッズ / 真中まな / 公式投稿</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2084632192987324757" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 <article class="i0 u-tomorrow v-date m-manaka-mana">
 <div class="i1">
@@ -862,6 +1169,7 @@ h3 {
 <p class="i5">第1部 11:00〜12:00（受付 10:30〜）／第2部 14:00〜15:00（受付 13:30〜）</p>
 <p class="i3">イベント / 真中まな / 公式投稿</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2084114495136559153" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
@@ -875,7 +1183,52 @@ h3 {
 
 
 <p class="i3">テレビ / 真中まな / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.tbs.co.jp/ookami_tbs/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088488412609417610" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.tbs.co.jp/ookami_tbs/" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>4件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088488329985888739" target="_blank" rel="noopener noreferrer" aria-label="８月２１日（金）よる７時〜のX投稿を見る">
+<time datetime="2026-08-15T13:49:54+09:00">8/15 13:49</time>
+<span>８月２１日（金）よる７時〜</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>3件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088488412609417610" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T13:50:14+09:00">8/15 13:50</time>
+<span>MC 浜田雅功</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088468309524009333" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T12:30:21+09:00">8/15 12:30</time>
+<span>ふるっぱーメディア情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086672293389062320" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-10T13:33:37+09:00">8/10 13:33</time>
+<span>ふるっぱーメディア情報</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
@@ -889,7 +1242,64 @@ h3 {
 <p class="i2">「NHK夏の音楽祭 うたであえたら 2026」は放送終了。全編のもくじガイドが公開され、8月22日まで配信を見返せます</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/list?mediaAction=watch?cid=utahk-x-live-onepl-99" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088630831229308999" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/list?mediaAction=watch?cid=utahk-x-live-onepl-99" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>6件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>5件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086451020562145690" target="_blank" rel="noopener noreferrer" aria-label="NHK うたであえたら2026のX投稿を見る">
+<time datetime="2026-08-09T22:54:22+09:00">8/9 22:54</time>
+<span>NHK うたであえたら2026</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087721833491833179" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-13T11:04:07+09:00">8/13 11:04</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088123385796854064" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-14T13:39:45+09:00">8/14 13:39</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087775490363044061" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-13T14:37:20+09:00">8/13 14:37</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088630831229308999" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-15T23:16:09+09:00">8/15 23:16</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087027069637292509" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-11T13:03:23+09:00">8/11 13:03</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 <article class="i0 u-within_7_days v-date m-none">
 <div class="i1">
@@ -900,7 +1310,46 @@ h3 {
 <p class="i2">NHKの音楽番組「うたであえたら 2026」でFRUITS ZIPPERが披露した「ムーンライト伝説」のフルパフォーマンスをNHK ONEで見逃し配信中。配信は8月22日まで</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=936&amp;cid=utahk-x-lc-one1-m05" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088857283275153484" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=936&amp;cid=utahk-x-lc-one1-m05" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088857283275153484" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-16T14:16:00+09:00">8/16 14:16</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088567685512855752" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-15T19:05:14+09:00">8/15 19:05</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088582918188994679" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T20:05:46+09:00">8/15 20:05</time>
+<span>うたであえたら 2026</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 <article class="i0 u-within_7_days v-date m-none">
 <div class="i1">
@@ -912,6 +1361,7 @@ h3 {
 
 <p class="i3">配信 / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/P3Y8RLXNNK?startOffset=1542&amp;cid=utahk-x-lc-one2-m16-4" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088857411549601867" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 <article class="i0 u-within_7_days v-date m-none">
 <div class="i1">
@@ -922,7 +1372,46 @@ h3 {
 <p class="i2">NHK ONEで「うたであえたら 2026」のFRUITS ZIPPER「はちゃめちゃわちゃライフ！」フルパフォーマンスを見逃し配信中。配信は2026年8月22日まで</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=1774&amp;cid=utahk-x-lc-one1-m07" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088857436182774194" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=1774&amp;cid=utahk-x-lc-one1-m07" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088567726524817597" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-15T19:05:24+09:00">8/15 19:05</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088857436182774194" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-16T14:16:36+09:00">8/16 14:16</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088583209756090417" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T20:06:55+09:00">8/15 20:06</time>
+<span>うたであえたら 2026</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 <article class="i0 u-within_7_days v-date m-sakurai-yui">
 <div class="i1">
@@ -933,7 +1422,41 @@ h3 {
 <p class="i2">NHK ONEで「NHK夏の音楽祭 うたであえたら 2026」の見逃し配信中。増田惠子、櫻井優衣、FRUITS ZIPPERによる「UFO」のフルパフォーマンスを視聴でき、見逃し配信は8月22日まで</p>
 
 <p class="i3">配信 / 櫻井優衣 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/P3Y8RLXNNK?startOffset=1068&amp;cid=utahk-x-lc-one2-m15" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088908187152068971" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/P3Y8RLXNNK?startOffset=1068&amp;cid=utahk-x-lc-one2-m15" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-sakurai-yui">
+<h4><span>櫻井優衣</span><em>3件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088908187152068971" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-16T17:38:16+09:00">8/16 17:38</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088582372140953740" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-15T20:03:36+09:00">8/15 20:03</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088583447745101890" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-15T20:07:52+09:00">8/15 20:07</time>
+<span>うたであえたら 2026</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 <article class="i0 u-within_7_days v-date m-none">
 <div class="i1">
@@ -945,6 +1468,7 @@ h3 {
 
 <p class="i3">ライブ / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://www.red-hot.ne.jp/play/detail.php?pid=py28252" target="_blank" rel="noopener noreferrer">申込・購入</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087418805756756239" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
@@ -959,6 +1483,7 @@ h3 {
 
 <p class="i3">配信 / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://www.telasa.jp/videos/250447" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088098865786634646" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 <article class="i0 u-within_7_days v-date m-manaka-mana">
 <div class="i1">
@@ -970,6 +1495,7 @@ h3 {
 
 <p class="i3">ラジオ / 真中まな / 公式リポスト</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089378317657149665" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 <article class="i0 u-within_7_days v-date m-none">
 <div class="i1">
@@ -980,7 +1506,40 @@ h3 {
 <p class="i2">ニッポン放送「FRUITS ZIPPERのオールナイトニッポンX(クロス)」が8月24日24時から放送。ゲストは紅しょうが</p>
 
 <p class="i3">ラジオ / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://news.1242.com/article/551765" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2086852875502919819" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://news.1242.com/article/551765" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086852875502919819" target="_blank" rel="noopener noreferrer" aria-label="\スペシャルウィーク/のX投稿を見る">
+<time datetime="2026-08-11T01:31:12+09:00">8/11 01:31</time>
+<span>\スペシャルウィーク/</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087418167077507232" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-12T14:57:28+09:00">8/12 14:57</time>
+<span>真中まな 早瀬ノエル オールナイトニッポンX</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
@@ -994,7 +1553,40 @@ h3 {
 <p class="i2">8月13日〜25日にShibuya Sakura Stageで開催。来場者特典として、全5種の限定トレカをチケット1枚につき1枚ランダム配布。前売り券は8月12日まで</p>
 <p class="i5">営業時間 11:00〜21:00（最終入場 20:00）</p>
 <p class="i3">イベント / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://pukapuka-park.com/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2086970161001824548" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://pukapuka-park.com/" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-manaka-mana">
+<h4><span>真中まな</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087787811080745268" target="_blank" rel="noopener noreferrer" aria-label="真中まなのX投稿を見る">
+<time datetime="2026-08-13T15:26:18+09:00">8/13 15:26</time>
+<span>ボールプールを堪能するまなふぃ</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086970161001824548" target="_blank" rel="noopener noreferrer" aria-label="オープンまであと3日！のX投稿を見る">
+<time datetime="2026-08-11T09:17:15+09:00">8/11 09:17</time>
+<span>オープンまであと3日！</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
@@ -1009,6 +1601,7 @@ h3 {
 
 <p class="i3">テレビ / 櫻井優衣 / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://www.mbs.jp/mimi/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089235074210529346" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1016,31 +1609,31 @@ h3 {
 <h2><span>新着</span><em data-new-count="">5件</em></h2>
 <ol class="n1">
 <li data-new-item="" data-new-until="2026-08-19T04:53:21+09:00">
-<a href="#item-82b36c7dff66">
+<a href="#item-20a644f84243">
 <strong>FRUITS ZIPPER 新衣装 HOUGA衣装</strong>
 <small>その他</small>
 </a>
 </li>
 <li data-new-item="" data-new-until="2026-08-19T04:53:21+09:00">
-<a href="#item-2be2f3cddffe">
+<a href="#item-d0c7aaa55c82">
 <strong>ふるっぱーANNX SPウィーク 紅しょうが出演</strong>
 <small>ラジオ / 放送日 8/24(月)</small>
 </a>
 </li>
 <li data-new-item="" data-new-until="2026-08-18T20:43:04+09:00">
-<a href="#item-2b752e006200">
+<a href="#item-405ac348b9d0">
 <strong>【月足天音に関するお知らせ】 股関節の痛みによりライブ出演をお休みしておりました月足天音につきまして、現在もリハビリトレーニングを続けております</strong>
 <small>その他</small>
 </a>
 </li>
 <li data-new-item="" data-new-until="2026-08-18T20:43:04+09:00">
-<a href="#item-173d6e2b62e1">
+<a href="#item-095f4892b187">
 <strong>カワコレTGC 第2弾 北九州開催・KAWAII LAB. OFFICIAL FANCLUB先行受付</strong>
 <small>イベント / 開催日時 10/12(月) 16:00</small>
 </a>
 </li>
 <li data-new-item="" data-new-until="2026-08-18T20:43:04+09:00">
-<a href="#item-50efa8cbb7f4">
+<a href="#item-fccc701563ec">
 <strong>日曜日の初耳学</strong>
 <small>テレビ / 放送日時 8/23(日) 22:00</small>
 </a>
@@ -1051,7 +1644,7 @@ h3 {
 <h2><span>チケット申込</span><em>1件</em></h2>
 <div class="g0">
 <p class="g1">10/24(土)</p>
-<article class="i0 u-later v-date m-none" id="item-dd3825b5d62f">
+<article class="i0 u-later v-date m-none" id="item-e6f60787db6c">
 <div class="i1">
 <span class="e2">開催日時</span>
 <strong>10/24(土) 18:00</strong>
@@ -1061,6 +1654,7 @@ h3 {
 
 <p class="i3">チケット申込 / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://kham.com.tw/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CXNJEX" target="_blank" rel="noopener noreferrer">申込・購入</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087005966281904311" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1068,7 +1662,7 @@ h3 {
 <h2><span>グッズ</span><em>4件</em></h2>
 <div class="g0">
 <p class="g1">今日 8/18(火)</p>
-<article class="i0 u-today v-date m-none" id="item-6f74ae7339fd">
+<article class="i0 u-today v-date m-none" id="item-d0682ac76534">
 <div class="i1">
 <span class="e1">販売期限</span>
 <strong>今日 14:00まで</strong>
@@ -1077,12 +1671,46 @@ h3 {
 <p class="i2">2026年8月18日、TOYOTA ARENA TOKYOの物販エリア（adidas SPORTS PARK）で、ふるっぱーグッズを14:00から販売</p>
 
 <p class="i3">グッズ / 公式投稿</p>
-<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/87583" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087808890133963111" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/87583" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>3件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089328891978518767" target="_blank" rel="noopener noreferrer" aria-label="\ 8/18(火)「ASOBIEXPO 2026」 特別抽選会実施決定 /のX投稿を見る">
+<time datetime="2026-08-17T21:30:00+09:00">8/17 21:30</time>
+<span>\ 8/18(火)「ASOBIEXPO 2026」 特別抽選会実施決定 /</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087808890133963111" target="_blank" rel="noopener noreferrer" aria-label="8/18(火) ASOBIEXPO 2026 ふるっぱーグッズ販売情報のX投稿を見る">
+<time datetime="2026-08-13T16:50:03+09:00">8/13 16:50</time>
+<span>8/18(火) ASOBIEXPO 2026 ふるっぱーグッズ販売情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085400278308893029" target="_blank" rel="noopener noreferrer" aria-label="【ASOBIEXPO 2026 コラボグッズ 再販のお知らせ】のX投稿を見る">
+<time datetime="2026-08-07T01:19:05+09:00">8/7 01:19</time>
+<span>【ASOBIEXPO 2026 コラボグッズ 再販のお知らせ】</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
 <p class="g1">明日 8/19(水)</p>
-<article class="i0 u-tomorrow v-date m-manaka-mana" id="item-6a7225afb7c8">
+<article class="i0 u-tomorrow v-date m-manaka-mana" id="item-a71bbf90f563">
 <div class="i1">
 <span class="e1">受付終了</span>
 <strong>明日 15:00まで</strong>
@@ -1092,11 +1720,12 @@ h3 {
 <p class="i5">第1部 11:00〜12:00（受付 10:30〜）／第2部 14:00〜15:00（受付 13:30〜）</p>
 <p class="i3">グッズ / 真中まな / 公式投稿</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2084632192987324757" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
 <p class="g1">8/31(月)</p>
-<article class="i0 u-later v-date m-none" id="item-5094d45224d7">
+<article class="i0 u-later v-date m-none" id="item-47dc9f876468">
 <div class="i1">
 <span class="e1">販売期限</span>
 <strong>8/31(月) 14:59まで</strong>
@@ -1106,11 +1735,12 @@ h3 {
 
 <p class="i3">グッズ / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://kl-tc.sukisuki-shop.com" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2086350687915716830" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
 <p class="g1">9/30(水)</p>
-<article class="i0 u-later v-date m-none" id="item-498170bd4a2e">
+<article class="i0 u-later v-date m-none" id="item-c06ea9019311">
 <div class="i1">
 <span class="e1">販売期限</span>
 <strong>9/30(水) 14:59まで</strong>
@@ -1120,6 +1750,7 @@ h3 {
 
 <p class="i3">グッズ / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://kl-tc.sukisuki-shop.com/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087088958480289976" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1127,7 +1758,7 @@ h3 {
 <h2><span>キャンペーン</span><em>1件</em></h2>
 <div class="g0">
 <p class="g1">8/31(月)</p>
-<article class="i0 u-later v-date m-nakagawa-runa" id="item-3de681bf8825">
+<article class="i0 u-later v-date m-nakagawa-runa" id="item-726d161ac7c9">
 <div class="i1">
 <span class="e1">応募期限</span>
 <strong>8/31(月) 17:00まで</strong>
@@ -1137,6 +1768,7 @@ h3 {
 
 <p class="i3">キャンペーン / 仲川瑠夏 / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://x.com/1032500267055382530/status/2084549915834028126" target="_blank" rel="noopener noreferrer">応募詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2084859431557423306" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1144,21 +1776,49 @@ h3 {
 <h2><span>ライブ</span><em>3件</em></h2>
 <div class="g0">
 <p class="g1">今日 8/18(火)</p>
-<article class="i0 u-today v-date m-none" id="item-47b27a7ecc32">
+<article class="i0 u-today v-date m-none" id="item-227df71f0ab1">
 <div class="i1">
 <span class="e2">開催日時</span>
 <strong>今日 17:30</strong>
 </div>
-<h3>ASOBI EXPO 2026チケット販売中</h3>
+<h3>ASOBIEXPO 2026</h3>
 <p class="i2">ASOBISYSTEM 19th Anniversary ASOBIEXPO 2026。8/18(火) TOYOTA ARENA TOKYO。開場14:00 無料エリア、16:00 メインアリーナ(有料)、開演17:30 メインアリーナ(有料)</p>
 
 <p class="i3">ライブ / 公式投稿</p>
-<div class="i4"><a class="action-detail" href="https://asobiexpo.com/" target="_blank" rel="noopener noreferrer">申込・購入</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088133539225342342" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://asobiexpo.com/" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089481140658962550" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-18T07:34:59+09:00">8/18 07:34</time>
+<span>\\ 本日は ASOBIEXPO 2026 出演 //</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088133539225342342" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-14T14:20:06+09:00">8/14 14:20</time>
+<span>\\ 8/18(火)開催 ASOBI EXPO 2026チケット販売中 //</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
 <p class="g1">8/22(土)</p>
-<article class="i0 u-within_7_days v-date m-none" id="item-1df15e74fa01">
+<article class="i0 u-within_7_days v-date m-none" id="item-45cb7cc7b287">
 <div class="i1">
 <span class="e2">開催日時</span>
 <strong>8/22(土) 15:30</strong>
@@ -1168,11 +1828,12 @@ h3 {
 
 <p class="i3">ライブ / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://www.red-hot.ne.jp/play/detail.php?pid=py28252" target="_blank" rel="noopener noreferrer">申込・購入</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087418805756756239" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
 <p class="g1">9/12(土)</p>
-<article class="i0 u-later v-date m-none" id="item-1ead752f135d">
+<article class="i0 u-later v-date m-none" id="item-028f3ae11544">
 <div class="i1">
 <span class="e2">開催日時</span>
 <strong>9/12(土) 16:35</strong>
@@ -1182,6 +1843,7 @@ h3 {
 
 <p class="i3">ライブ / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://miraifest-tomakomai.jp/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087495561855558135" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1189,7 +1851,7 @@ h3 {
 <h2><span>イベント</span><em>4件</em></h2>
 <div class="g0">
 <p class="g1">今日 8/18(火)</p>
-<article class="i0 u-today v-date m-none" id="item-88d2fcdffdca">
+<article class="i0 u-today v-date m-none" id="item-6d26a2c185c3">
 <div class="i1">
 <span class="e1">終了日</span>
 <strong>今日まで</strong>
@@ -1198,12 +1860,115 @@ h3 {
 <p class="i2">8月6日から8月18日まで、ラフォーレミュージアム原宿で開催中。メンバーが展示を楽しむ様子の動画は8月14日17時に公開予定</p>
 
 <p class="i3">イベント / 公式投稿</p>
-<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/82229" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088158684983750968" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://fruitszipper.asobisystem.com/news/detail/82229" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>12件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-tsukiashi-amane">
+<h4><span>月足天音</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085957287970246934" target="_blank" rel="noopener noreferrer" aria-label="月足天音のX投稿を見る">
+<time datetime="2026-08-08T14:12:27+09:00">8/8 14:12</time>
+<span>【月足天音】の頭をおさえて【月足天音】のサインを書く【月足天音】 ( )</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-nakagawa-runa">
+<h4><span>仲川瑠夏</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085561574173896717" target="_blank" rel="noopener noreferrer" aria-label="仲川瑠夏のX投稿を見る">
+<time datetime="2026-08-07T12:00:01+09:00">8/7 12:00</time>
+<span>【FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿】</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>5件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085197562840289591" target="_blank" rel="noopener noreferrer" aria-label="本日から『FRUITS ZIPPER 超☆観測展』のX投稿を見る">
+<time datetime="2026-08-06T11:53:34+09:00">8/6 11:53</time>
+<span>本日から『FRUITS ZIPPER 超☆観測展』</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2085592203079151650" target="_blank" rel="noopener noreferrer" aria-label="FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿のX投稿を見る">
+<time datetime="2026-08-07T14:01:44+09:00">8/7 14:01</time>
+<span>FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2084540363562443043" target="_blank" rel="noopener noreferrer" aria-label="『FRUITS ZIPPER 超☆観測展』情報のX投稿を見る">
+<time datetime="2026-08-04T16:22:06+09:00">8/4 16:22</time>
+<span>『FRUITS ZIPPER 超☆観測展』情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2084228192223850571" target="_blank" rel="noopener noreferrer" aria-label="『FRUITS ZIPPER 超☆観測展』情報のX投稿を見る">
+<time datetime="2026-08-03T19:41:38+09:00">8/3 19:41</time>
+<span>『FRUITS ZIPPER 超☆観測展』情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2084849656279056583" target="_blank" rel="noopener noreferrer" aria-label="『FRUITS ZIPPER 超☆観測展』情報のX投稿を見る">
+<time datetime="2026-08-05T12:51:07+09:00">8/5 12:51</time>
+<span>『FRUITS ZIPPER 超☆観測展』情報</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>5件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088158684983750968" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-14T16:00:01+09:00">8/14 16:00</time>
+<span>「FRUITS ZIPPER 超☆観測展」に</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087785150369484941" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-13T15:15:43+09:00">8/13 15:15</time>
+<span>真剣に松本かれんブースをみるまつかれ</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086736045027278936" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-10T17:46:57+09:00">8/10 17:46</time>
+<span>チケットもらって嬉しそうなかれんたん</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089245846009266361" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-17T16:00:00+09:00">8/17 16:00</time>
+<span>【FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿】</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088839913689292981" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-16T13:06:58+09:00">8/16 13:06</time>
+<span>【FRUITS ZIPPER 超☆観測展＠ラフォーレミュージアム原宿】</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
 <p class="g1">明日 8/19(水)</p>
-<article class="i0 u-tomorrow v-date m-manaka-mana" id="item-d27228529f9f">
+<article class="i0 u-tomorrow v-date m-manaka-mana" id="item-229d2ab84a1c">
 <div class="i1">
 <span class="e2">開催枠</span>
 <strong>明日 2部制</strong>
@@ -1213,11 +1978,12 @@ h3 {
 <p class="i5">第1部 11:00〜12:00（受付 10:30〜）／第2部 14:00〜15:00（受付 13:30〜）</p>
 <p class="i3">イベント / 真中まな / 公式投稿</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2084114495136559153" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
 <p class="g1">8/25(火)</p>
-<article class="i0 u-within_7_days v-date m-none" id="item-99de4f9a4259">
+<article class="i0 u-within_7_days v-date m-none" id="item-3f6e782e895c">
 <div class="i1">
 <span class="e1">終了日時</span>
 <strong>8/25(火) 21:00まで</strong>
@@ -1226,12 +1992,45 @@ h3 {
 <p class="i2">8月13日〜25日にShibuya Sakura Stageで開催。来場者特典として、全5種の限定トレカをチケット1枚につき1枚ランダム配布。前売り券は8月12日まで</p>
 <p class="i5">営業時間 11:00〜21:00（最終入場 20:00）</p>
 <p class="i3">イベント / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://pukapuka-park.com/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2086970161001824548" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://pukapuka-park.com/" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-manaka-mana">
+<h4><span>真中まな</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087787811080745268" target="_blank" rel="noopener noreferrer" aria-label="真中まなのX投稿を見る">
+<time datetime="2026-08-13T15:26:18+09:00">8/13 15:26</time>
+<span>ボールプールを堪能するまなふぃ</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086970161001824548" target="_blank" rel="noopener noreferrer" aria-label="オープンまであと3日！のX投稿を見る">
+<time datetime="2026-08-11T09:17:15+09:00">8/11 09:17</time>
+<span>オープンまであと3日！</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
 <p class="g1">10/12(月)</p>
-<article class="i0 u-later v-date m-none" id="item-173d6e2b62e1">
+<article class="i0 u-later v-date m-none" id="item-095f4892b187">
 <div class="i1">
 <span class="e2">開催日時</span>
 <strong>10/12(月) 16:00</strong>
@@ -1241,6 +2040,7 @@ h3 {
 
 <p class="i3">イベント / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://tgc.girlswalker.com/kawacolle/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089230750226825225" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1248,7 +2048,7 @@ h3 {
 <h2><span>テレビ</span><em>3件</em></h2>
 <div class="g0">
 <p class="g1">今日 8/18(火)</p>
-<article class="i0 u-today v-date m-manaka-mana" id="item-e8f1687415aa">
+<article class="i0 u-today v-date m-manaka-mana" id="item-5c21460829f6">
 <div class="i1">
 <span class="e2">放送日時</span>
 <strong>今日 19:00</strong>
@@ -1258,11 +2058,12 @@ h3 {
 
 <p class="i3">テレビ / 真中まな / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://www.ctv.co.jp/omouma/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2087350704767906055" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
 <p class="g1">8/21(金)</p>
-<article class="i0 u-within_3_days v-date m-manaka-mana" id="item-cbc5ae3877f6">
+<article class="i0 u-within_3_days v-date m-manaka-mana" id="item-3cc262d99d9d">
 <div class="i1">
 <span class="e2">放送日時</span>
 <strong>8/21(金) 19:00</strong>
@@ -1271,12 +2072,57 @@ h3 {
 
 
 <p class="i3">テレビ / 真中まな / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.tbs.co.jp/ookami_tbs/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088488412609417610" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.tbs.co.jp/ookami_tbs/" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>4件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088488329985888739" target="_blank" rel="noopener noreferrer" aria-label="８月２１日（金）よる７時〜のX投稿を見る">
+<time datetime="2026-08-15T13:49:54+09:00">8/15 13:49</time>
+<span>８月２１日（金）よる７時〜</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>3件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088488412609417610" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T13:50:14+09:00">8/15 13:50</time>
+<span>MC 浜田雅功</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088468309524009333" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T12:30:21+09:00">8/15 12:30</time>
+<span>ふるっぱーメディア情報</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086672293389062320" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-10T13:33:37+09:00">8/10 13:33</time>
+<span>ふるっぱーメディア情報</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
 <p class="g1">8/23(日)</p>
-<article class="i0 u-within_7_days v-date m-sakurai-yui" id="item-50efa8cbb7f4">
+<article class="i0 u-within_7_days v-date m-sakurai-yui" id="item-fccc701563ec">
 <div class="i1">
 <span class="e2">放送日時</span>
 <strong>8/23(日) 22:00</strong>
@@ -1286,6 +2132,7 @@ h3 {
 
 <p class="i3">テレビ / 櫻井優衣 / 公式投稿</p>
 <div class="i4"><a class="action-detail" href="https://www.mbs.jp/mimi/" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089235074210529346" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1293,7 +2140,7 @@ h3 {
 <h2><span>ラジオ</span><em>2件</em></h2>
 <div class="g0">
 <p class="g1">8/24(月)</p>
-<article class="i0 u-within_7_days v-date m-manaka-mana" id="item-2be2f3cddffe">
+<article class="i0 u-within_7_days v-date m-manaka-mana" id="item-d0c7aaa55c82">
 <div class="i1">
 <span class="e2">放送日</span>
 <strong>8/24(月)</strong>
@@ -1303,8 +2150,9 @@ h3 {
 
 <p class="i3">ラジオ / 真中まな / 公式リポスト</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089378317657149665" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
-<article class="i0 u-within_7_days v-date m-none" id="item-6308baa8bb00">
+<article class="i0 u-within_7_days v-date m-none" id="item-a1e64bcdd955">
 <div class="i1">
 <span class="e2">放送日時</span>
 <strong>8/24(月) 24:00</strong>
@@ -1313,7 +2161,40 @@ h3 {
 <p class="i2">ニッポン放送「FRUITS ZIPPERのオールナイトニッポンX(クロス)」が8月24日24時から放送。ゲストは紅しょうが</p>
 
 <p class="i3">ラジオ / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://news.1242.com/article/551765" target="_blank" rel="noopener noreferrer">詳細</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2086852875502919819" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://news.1242.com/article/551765" target="_blank" rel="noopener noreferrer">詳細</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086852875502919819" target="_blank" rel="noopener noreferrer" aria-label="\スペシャルウィーク/のX投稿を見る">
+<time datetime="2026-08-11T01:31:12+09:00">8/11 01:31</time>
+<span>\スペシャルウィーク/</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087418167077507232" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-12T14:57:28+09:00">8/12 14:57</time>
+<span>真中まな 早瀬ノエル オールナイトニッポンX</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 </section>
@@ -1321,7 +2202,7 @@ h3 {
 <h2><span>配信</span><em>7件</em></h2>
 <div class="g0">
 <p class="g1">8/22(土)</p>
-<article class="i0 u-within_7_days v-date m-none" id="item-b7e30f383d91">
+<article class="i0 u-within_7_days v-date m-none" id="item-91eca6c88d7b">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>8/22(土)まで</strong>
@@ -1330,9 +2211,48 @@ h3 {
 <p class="i2">NHKの音楽番組「うたであえたら 2026」でFRUITS ZIPPERが披露した「ムーンライト伝説」のフルパフォーマンスをNHK ONEで見逃し配信中。配信は8月22日まで</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=936&amp;cid=utahk-x-lc-one1-m05" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088857283275153484" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=936&amp;cid=utahk-x-lc-one1-m05" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088857283275153484" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-16T14:16:00+09:00">8/16 14:16</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088567685512855752" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-15T19:05:14+09:00">8/15 19:05</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088582918188994679" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T20:05:46+09:00">8/15 20:05</time>
+<span>うたであえたら 2026</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
-<article class="i0 u-within_7_days v-date m-none" id="item-259aee8a3710">
+<article class="i0 u-within_7_days v-date m-none" id="item-6e85a7785a0b">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>8/22(土)まで</strong>
@@ -1342,8 +2262,9 @@ h3 {
 
 <p class="i3">配信 / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/P3Y8RLXNNK?startOffset=1542&amp;cid=utahk-x-lc-one2-m16-4" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088857411549601867" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
-<article class="i0 u-within_7_days v-date m-sakurai-yui" id="item-6e9959c5d611">
+<article class="i0 u-within_7_days v-date m-sakurai-yui" id="item-bca18d1e8ee7">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>8/22(土)まで</strong>
@@ -1352,9 +2273,43 @@ h3 {
 <p class="i2">NHK ONEで「NHK夏の音楽祭 うたであえたら 2026」の見逃し配信中。増田惠子、櫻井優衣、FRUITS ZIPPERによる「UFO」のフルパフォーマンスを視聴でき、見逃し配信は8月22日まで</p>
 
 <p class="i3">配信 / 櫻井優衣 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/P3Y8RLXNNK?startOffset=1068&amp;cid=utahk-x-lc-one2-m15" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088908187152068971" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/P3Y8RLXNNK?startOffset=1068&amp;cid=utahk-x-lc-one2-m15" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-sakurai-yui">
+<h4><span>櫻井優衣</span><em>3件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088908187152068971" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-16T17:38:16+09:00">8/16 17:38</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088582372140953740" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-15T20:03:36+09:00">8/15 20:03</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088583447745101890" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-15T20:07:52+09:00">8/15 20:07</time>
+<span>うたであえたら 2026</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
-<article class="i0 u-within_7_days v-date m-none" id="item-b35cf1e1cd06">
+<article class="i0 u-within_7_days v-date m-none" id="item-818f13e684e6">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>8/22(土)まで</strong>
@@ -1363,9 +2318,66 @@ h3 {
 <p class="i2">「NHK夏の音楽祭 うたであえたら 2026」は放送終了。全編のもくじガイドが公開され、8月22日まで配信を見返せます</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/list?mediaAction=watch?cid=utahk-x-live-onepl-99" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088630831229308999" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/list?mediaAction=watch?cid=utahk-x-live-onepl-99" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>6件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>5件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2086451020562145690" target="_blank" rel="noopener noreferrer" aria-label="NHK うたであえたら2026のX投稿を見る">
+<time datetime="2026-08-09T22:54:22+09:00">8/9 22:54</time>
+<span>NHK うたであえたら2026</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087721833491833179" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-13T11:04:07+09:00">8/13 11:04</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088123385796854064" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-14T13:39:45+09:00">8/14 13:39</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087775490363044061" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-13T14:37:20+09:00">8/13 14:37</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088630831229308999" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-15T23:16:09+09:00">8/15 23:16</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2087027069637292509" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-11T13:03:23+09:00">8/11 13:03</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
-<article class="i0 u-within_7_days v-date m-none" id="item-3758268f34c0">
+<article class="i0 u-within_7_days v-date m-none" id="item-fbb0de48ece9">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>8/22(土)まで</strong>
@@ -1374,12 +2386,51 @@ h3 {
 <p class="i2">NHK ONEで「うたであえたら 2026」のFRUITS ZIPPER「はちゃめちゃわちゃライフ！」フルパフォーマンスを見逃し配信中。配信は2026年8月22日まで</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=1774&amp;cid=utahk-x-lc-one1-m07" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088857436182774194" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://www.web.nhk/tv/pl/series-tep-4QYYY55VW3/ep/E1YV76219Y?startOffset=1774&amp;cid=utahk-x-lc-one1-m07" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>3件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088567726524817597" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-15T19:05:24+09:00">8/15 19:05</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088857436182774194" target="_blank" rel="noopener noreferrer" aria-label="NHK夏の音楽祭のX投稿を見る">
+<time datetime="2026-08-16T14:16:36+09:00">8/16 14:16</time>
+<span>NHK夏の音楽祭</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-none">
+<h4><span>複数メンバー</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088583209756090417" target="_blank" rel="noopener noreferrer" aria-label="複数メンバーのX投稿を見る">
+<time datetime="2026-08-15T20:06:55+09:00">8/15 20:06</time>
+<span>うたであえたら 2026</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 <div class="g0">
 <p class="g1">8/24(月)</p>
-<article class="i0 u-within_7_days v-date m-none" id="item-2158521ed5da">
+<article class="i0 u-within_7_days v-date m-none" id="item-01cd36087661">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>8/24(月)まで</strong>
@@ -1389,11 +2440,12 @@ h3 {
 
 <p class="i3">配信 / 公式リポスト</p>
 <div class="i4"><a class="action-detail" href="https://www.telasa.jp/videos/250447" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088098865786634646" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 <div class="g0">
 <p class="g1">9/7(月)</p>
-<article class="i0 u-later v-date m-none" id="item-4b6fee94f500">
+<article class="i0 u-later v-date m-none" id="item-98def53ed34f">
 <div class="i1">
 <span class="e1">配信終了日</span>
 <strong>9/7(月)まで</strong>
@@ -1402,7 +2454,35 @@ h3 {
 <p class="i2">LuckyFes&#x27;26で披露されたTUBEの2曲を、8月15日18:00からABEMAで無料配信。9月7日まで視聴可能</p>
 
 <p class="i3">配信 / 公式リポスト</p>
-<div class="i4"><a class="action-detail" href="https://abema.go.link/bYLOI" target="_blank" rel="noopener noreferrer">視聴する</a><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088594721312825763" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+<div class="i4"><a class="action-detail" href="https://abema.go.link/bYLOI" target="_blank" rel="noopener noreferrer">視聴する</a></div>
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>2件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-none">
+<h4><span>公式投稿</span><em>2件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088594721312825763" target="_blank" rel="noopener noreferrer" aria-label="◤お知らせ◢のX投稿を見る">
+<time datetime="2026-08-15T20:52:40+09:00">8/15 20:52</time>
+<span>◤お知らせ◢</span>
+</a>
+</li>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088561814200373694" target="_blank" rel="noopener noreferrer" aria-label="【ABEMAで無料見逃しスタート 】のX投稿を見る">
+<time datetime="2026-08-15T18:41:54+09:00">8/15 18:41</time>
+<span>【ABEMAで無料見逃しスタート 】</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 </section>
@@ -1410,7 +2490,7 @@ h3 {
 <h2><span>リリース</span><em>1件</em></h2>
 <div class="g0">
 <p class="g1">10/2(金)</p>
-<article class="i0 u-later v-date m-nakagawa-runa" id="item-75ec0925bf1f">
+<article class="i0 u-later v-date m-nakagawa-runa" id="item-e0dd95e8eb86">
 <div class="i1">
 <span class="e2">公開日</span>
 <strong>10/2(金)</strong>
@@ -1420,6 +2500,7 @@ h3 {
 
 <p class="i3">リリース / 仲川瑠夏 / 公式リポスト</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2085694754789155268" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
 </div>
 </section>
@@ -1427,26 +2508,203 @@ h3 {
 <h2><span>その他</span><em>3件</em></h2>
 <div class="g0">
 <p class="g1">日付なし</p>
-<article class="i0 u-unknown v-nodate m-none" id="item-82b36c7dff66">
+<article class="i0 u-unknown v-nodate m-none" id="item-20a644f84243">
 <h3><span class="new-badge" data-new-marker="" data-new-until="2026-08-19T04:53:21+09:00">NEW</span>FRUITS ZIPPER 新衣装 HOUGA衣装</h3>
 
 
 <p class="i3">その他 / 公式投稿</p>
-<div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089369845678932226" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>7件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-tsukiashi-amane">
+<h4><span>月足天音</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089367126562025935" target="_blank" rel="noopener noreferrer" aria-label="月足天音のX投稿を見る">
+<time datetime="2026-08-18T00:01:56+09:00">8/18 00:01</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-chinzei-suzuka">
+<h4><span>鎮西寿々歌</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089365087450734609" target="_blank" rel="noopener noreferrer" aria-label="鎮西寿々歌のX投稿を見る">
+<time datetime="2026-08-17T23:53:50+09:00">8/17 23:53</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-sakurai-yui">
+<h4><span>櫻井優衣</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089366673451307112" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-18T00:00:08+09:00">8/18 00:00</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-nakagawa-runa">
+<h4><span>仲川瑠夏</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089369845678932226" target="_blank" rel="noopener noreferrer" aria-label="仲川瑠夏のX投稿を見る">
+<time datetime="2026-08-18T00:12:44+09:00">8/18 00:12</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-manaka-mana">
+<h4><span>真中まな</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089368835677950050" target="_blank" rel="noopener noreferrer" aria-label="真中まなのX投稿を見る">
+<time datetime="2026-08-18T00:08:43+09:00">8/18 00:08</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-matsumoto-karen">
+<h4><span>松本かれん</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089364937718259999" target="_blank" rel="noopener noreferrer" aria-label="松本かれんのX投稿を見る">
+<time datetime="2026-08-17T23:53:14+09:00">8/17 23:53</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-hayase-noel">
+<h4><span>早瀬ノエル</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2089365261774467310" target="_blank" rel="noopener noreferrer" aria-label="早瀬ノエルのX投稿を見る">
+<time datetime="2026-08-17T23:54:31+09:00">8/17 23:54</time>
+<span>FRUITS ZIPPER 新衣装</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
-<article class="i0 u-unknown v-nodate m-tsukiashi-amane" id="item-2b752e006200">
+<article class="i0 u-unknown v-nodate m-tsukiashi-amane" id="item-405ac348b9d0">
 <h3><span class="new-badge" data-new-marker="" data-new-until="2026-08-18T20:43:04+09:00">NEW</span>【月足天音に関するお知らせ】 股関節の痛みによりライブ出演をお休みしておりました月足天音につきまして、現在もリハビリトレーニングを続けております</h3>
 <p class="i2">今週の出演につきましては、医師の判断のもと、体調や状態を考慮し、一部パフォーマンスを制限、または椅子に着席する形でのパフォーマンス</p>
 
 <p class="i3">その他 / 月足天音 / 公式投稿</p>
 <div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2089260954215428487" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
 </article>
-<article class="i0 u-unknown v-nodate m-tsukiashi-amane" id="item-ce207988e291">
+<article class="i0 u-unknown v-nodate m-tsukiashi-amane" id="item-ae22b1bf610b">
 <h3>ふるっぱーフォト</h3>
 <p class="i2">月足天音の『ふるっぱーフォト』を公開。撮影はYuna Yoshimori</p>
 
 <p class="i3">その他 / 月足天音 / 公式投稿</p>
-<div class="i4"><a class="action-x" href="https://x.com/FRUITS_ZIPPER/status/2088906106986709422" target="_blank" rel="noopener noreferrer" aria-label="Xの投稿を見る"><svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>投稿を見る</span></a></div>
+
+<details class="i6">
+<summary>
+<span class="i6-label">
+<svg class="x0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+<span>関連投稿</span>
+</span>
+<strong>7件</strong>
+</summary>
+<div class="i7">
+<section class="i8 m-tsukiashi-amane">
+<h4><span>月足天音</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088906106986709422" target="_blank" rel="noopener noreferrer" aria-label="月足天音のX投稿を見る">
+<time datetime="2026-08-16T17:30:00+09:00">8/16 17:30</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-chinzei-suzuka">
+<h4><span>鎮西寿々歌</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088898559366336806" target="_blank" rel="noopener noreferrer" aria-label="鎮西寿々歌のX投稿を見る">
+<time datetime="2026-08-16T17:00:01+09:00">8/16 17:00</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-sakurai-yui">
+<h4><span>櫻井優衣</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088883457284022370" target="_blank" rel="noopener noreferrer" aria-label="櫻井優衣のX投稿を見る">
+<time datetime="2026-08-16T16:00:00+09:00">8/16 16:00</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-nakagawa-runa">
+<h4><span>仲川瑠夏</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088868358947225950" target="_blank" rel="noopener noreferrer" aria-label="仲川瑠夏のX投稿を見る">
+<time datetime="2026-08-16T15:00:00+09:00">8/16 15:00</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-manaka-mana">
+<h4><span>真中まな</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088860185213505746" target="_blank" rel="noopener noreferrer" aria-label="真中まなのX投稿を見る">
+<time datetime="2026-08-16T14:27:31+09:00">8/16 14:27</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-matsumoto-karen">
+<h4><span>松本かれん</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088891006351503455" target="_blank" rel="noopener noreferrer" aria-label="松本かれんのX投稿を見る">
+<time datetime="2026-08-16T16:30:00+09:00">8/16 16:30</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+<section class="i8 m-hayase-noel">
+<h4><span>早瀬ノエル</span><em>1件</em></h4>
+<ul>
+<li>
+<a href="https://x.com/FRUITS_ZIPPER/status/2088875907083809085" target="_blank" rel="noopener noreferrer" aria-label="早瀬ノエルのX投稿を見る">
+<time datetime="2026-08-16T15:30:00+09:00">8/16 15:30</time>
+<span>ふるっぱーフォト</span>
+</a>
+</li>
+</ul>
+</section>
+</div>
+</details>
 </article>
 </div>
 </section>
